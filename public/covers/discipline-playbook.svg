@@ -1,0 +1,19 @@
+<svg viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="800" fill="#0F1A33"/>
+  <rect x="0" y="0" width="600" height="800" fill="#0F1A33" opacity="0.55"/>
+  <rect x="0" y="0" width="600" height="800" fill="none" stroke="#C9A23E" stroke-width="4" opacity="0.5"/>
+  <rect x="28" y="28" width="544" height="744" fill="none" stroke="#C9A23E" stroke-width="1.5" opacity="0.35"/>
+
+  <text x="300" y="140" text-anchor="middle" font-family="Georgia, serif" font-size="18" letter-spacing="6" fill="#C9A23E" opacity="0.7">KIP ACADEMY</text>
+  <line x1="230" y1="163" x2="370" y2="163" stroke="#C9A23E" stroke-width="1" opacity="0.5"/>
+
+  <text x="300" y="370" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="44" letter-spacing="1" fill="#F7F5F0" opacity="0.75">THE DISCIPLINE</text>
+  <text x="300" y="430" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="44" letter-spacing="1" fill="#C9A23E" opacity="0.75">PLAYBOOK</text>
+
+  <g opacity="0.7">
+    <rect x="235" y="560" width="130" height="34" rx="2" fill="none" stroke="#C9A23E" stroke-width="1.5"/>
+    <text x="300" y="583" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="2" fill="#C9A23E">COMING SOON</text>
+  </g>
+
+  <text x="300" y="740" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="4" fill="#C9A23E" opacity="0.6">KNOWLEDGE IS POWER</text>
+</svg>
