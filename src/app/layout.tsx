@@ -5,7 +5,8 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import { FB_PIXEL_ID, GA_MEASUREMENT_ID, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/config";
+import { MetaPixel } from "@/components/MetaPixel";
+import { GA_MEASUREMENT_ID, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/config";
 
 const heading = Poppins({
   subsets: ["latin"],
@@ -78,27 +79,12 @@ export default function RootLayout({
         )}
 
         {/*
-          TODO: Meta / Facebook Pixel
-          Paste your Pixel ID into NEXT_PUBLIC_FB_PIXEL_ID (see
-          .env.local.example) or directly into FB_PIXEL_ID in
-          src/lib/config.ts. The snippet below only loads once an ID is set.
+          Meta / Facebook Pixel — base code + PageView on every route
+          change, handled by src/components/MetaPixel.tsx. Paste your
+          Pixel ID into NEXT_PUBLIC_FB_PIXEL_ID (see .env.local.example);
+          it only loads once an ID is set.
         */}
-        {FB_PIXEL_ID && (
-          <Script id="fb-pixel" strategy="afterInteractive">
-            {`
-              !function(f,b,e,v,n,t,s)
-              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-              n.queue=[];t=b.createElement(e);t.async=!0;
-              t.src=v;s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)}(window, document,'script',
-              'https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init', '${FB_PIXEL_ID}');
-              fbq('track', 'PageView');
-            `}
-          </Script>
-        )}
+        <MetaPixel />
 
         <Header />
         <main>{children}</main>

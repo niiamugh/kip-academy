@@ -8,6 +8,7 @@ import { TrustStrip } from "@/components/product/TrustStrip";
 import { Testimonials } from "@/components/product/Testimonials";
 import { FAQAccordion } from "@/components/product/FAQAccordion";
 import { LeadMagnetSection } from "@/components/LeadMagnetSection";
+import { BuyButton } from "@/components/BuyButton";
 
 export function generateStaticParams() {
   return products.map((p) => ({ id: p.id }));
@@ -105,12 +106,14 @@ export default function ProductPage({ params }: { params: { id: string } }) {
               </span>
             </div>
 
-            <a
-              href={product.paymentLink}
-              className="mt-8 flex max-w-xs items-center justify-center rounded-sm bg-gold px-8 py-4 text-center font-heading text-sm font-bold text-navy transition-colors hover:bg-gold-light"
-            >
-              Buy Now
-            </a>
+            <div className="mt-8">
+              <BuyButton
+                productId={product.id}
+                productName={product.title}
+                priceGHS={product.priceGHS}
+                fallbackLink={product.paymentLink}
+              />
+            </div>
             <p className="mt-4 font-body text-xs text-offwhite/45">{PAYMENT_TRUST_NOTE}</p>
           </div>
         </div>
@@ -222,12 +225,14 @@ export default function ProductPage({ params }: { params: { id: string } }) {
           <p className="mt-4 font-body text-base text-offwhite/70">
             Instant download. GH&#8373;{product.priceGHS} once, yours for good.
           </p>
-          <a
-            href={product.paymentLink}
-            className="mx-auto mt-8 flex max-w-xs items-center justify-center rounded-sm bg-gold px-8 py-4 text-center font-heading text-sm font-bold text-navy transition-colors hover:bg-gold-light"
-          >
-            Buy Now
-          </a>
+          <div className="mx-auto mt-8 flex justify-center">
+            <BuyButton
+              productId={product.id}
+              productName={product.title}
+              priceGHS={product.priceGHS}
+              fallbackLink={product.paymentLink}
+            />
+          </div>
         </div>
       </section>
     </>

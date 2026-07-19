@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getFeaturedProduct } from "@/data/products";
 import { PAYMENT_TRUST_NOTE } from "@/lib/config";
+import { BuyButton } from "@/components/BuyButton";
 
 export function FeaturedProduct() {
   const product = getFeaturedProduct();
@@ -41,13 +42,13 @@ export function FeaturedProduct() {
             </span>
           </div>
 
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <a
-              href={product.paymentLink}
-              className="flex items-center justify-center rounded-sm bg-gold px-8 py-4 text-center font-heading text-sm font-bold text-navy transition-colors hover:bg-gold-light"
-            >
-              Buy Now
-            </a>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-start">
+            <BuyButton
+              productId={product.id}
+              productName={product.title}
+              priceGHS={product.priceGHS}
+              fallbackLink={product.paymentLink}
+            />
             <Link
               href={`/store/${product.id}`}
               className="flex items-center justify-center rounded-sm border border-offwhite/30 px-8 py-4 text-center font-heading text-sm font-bold text-offwhite transition-colors hover:border-gold hover:text-gold"

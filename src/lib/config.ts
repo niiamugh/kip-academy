@@ -34,9 +34,11 @@ export const SOCIAL_LINKS = {
   whatsapp: WHATSAPP_LINK_WITH_MESSAGE,
 };
 
-// TODO: Paste your Paystack (or Selar) generic "buy a guide" fallback link
-// here. Each product in src/data/products.ts should have its own
-// `paymentLink`; this is only used if a product is missing one.
+// Checkout now runs through our own Paystack integration (see
+// src/app/api/paystack/*). `paymentLink` on each product is only a
+// FALLBACK used while PAYSTACK_SECRET_KEY isn't configured — point it at
+// your Skillspad page so the store never dead-ends. This default is used
+// if a product is missing one.
 export const DEFAULT_PAYMENT_LINK = "https://paystack.com/pay/PLACEHOLDER";
 
 export const PAYMENT_TRUST_NOTE =
@@ -52,7 +54,7 @@ export const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FB_PIXEL_ID || "";
 
 export const SITE_NAME = "KIP Academy";
 export const SITE_TAGLINE = "Knowledge Is Power";
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kipacademy.com";
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://thekipacademy.com";
 export const SITE_DESCRIPTION =
   "Practical PDF guides that help you build confidence, master your mindset, and turn what you know into how you live.";
 

@@ -8,6 +8,12 @@ export type Product = {
   priceGHS: number;
   priceUSD: number;
   coverImage: string;
+  /**
+   * FALLBACK checkout link (e.g. your Skillspad page). Checkout normally
+   * runs through our own Paystack integration (BuyButton →
+   * /api/paystack/initialize); this link is only used when
+   * PAYSTACK_SECRET_KEY isn't configured on the server.
+   */
   paymentLink: string;
   featured: boolean;
   comingSoon: boolean;
@@ -22,8 +28,8 @@ export type Product = {
  * here — the /store grid and /store/[id] sales page are both generated
  * automatically from this array, so you never have to touch layout code.
  *
- * TODO: replace `paymentLink` with your real Paystack or Selar payment
- * page link once it's created.
+ * TODO: replace `paymentLink` with your real Skillspad page link — it's
+ * the fallback checkout used until Paystack keys are configured.
  */
 export const products: Product[] = [
   {

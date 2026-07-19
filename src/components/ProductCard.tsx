@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/data/products";
+import { BuyButton } from "@/components/BuyButton";
 
 export function ProductCard({ product }: { product: Product }) {
   return (
@@ -43,12 +44,13 @@ export function ProductCard({ product }: { product: Product }) {
             </a>
           ) : (
             <div className="flex flex-col gap-2">
-              <a
-                href={product.paymentLink}
-                className="flex w-full items-center justify-center rounded-sm bg-gold py-3 font-heading text-sm font-bold text-navy transition-colors hover:bg-gold-light"
-              >
-                Buy Now
-              </a>
+              <BuyButton
+                productId={product.id}
+                productName={product.title}
+                priceGHS={product.priceGHS}
+                fallbackLink={product.paymentLink}
+                className="flex w-full items-center justify-center rounded-sm bg-gold py-3 font-heading text-sm font-bold text-navy transition-colors hover:bg-gold-light disabled:cursor-wait disabled:opacity-60"
+              />
               <Link
                 href={`/store/${product.id}`}
                 className="flex w-full items-center justify-center py-1 font-body text-xs font-medium text-navy/60 transition-colors hover:text-gold-dark"

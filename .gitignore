@@ -28,6 +28,11 @@ yarn-error.log*
 # local env files
 .env*.local
 
+# paid PDFs — NEVER commit these (the repo is public). They live only on
+# the VPS; see private/downloads/README.md
+/private/downloads/*
+!/private/downloads/README.md
+
 # vercel
 .vercel
 
