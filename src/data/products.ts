@@ -40,8 +40,8 @@ export const products: Product[] = [
     subtitle: "The practical guide to building confidence that doesn't crack under pressure.",
     description:
       "A no-fluff, chapter-by-chapter system for building real confidence — the kind that holds up in job interviews, hard conversations, and the moments that actually matter.",
-    priceGHS: 60,
-    priceUSD: 5,
+    priceGHS: 79,
+    priceUSD: 6,
     coverImage: "/covers/unshakeable.jpg",
     paymentLink: "https://paystack.com/pay/PLACEHOLDER-unshakeable",
     featured: true,
