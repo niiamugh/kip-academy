@@ -63,10 +63,10 @@ export function Header() {
             </Link>
           ))}
           <Link
-            href="/store/unshakeable"
+            href="/store"
             className="rounded-sm bg-red px-5 py-2.5 font-body text-sm font-semibold text-white transition-colors hover:bg-red-dark"
           >
-            Get Unshakeable
+            Shop Guides
           </Link>
         </nav>
 
@@ -96,10 +96,10 @@ export function Header() {
             </Link>
           ))}
           <Link
-            href="/store/unshakeable"
+            href="/store"
             className="mt-5 flex h-12 items-center justify-center rounded-sm bg-red font-body text-sm font-semibold text-white"
           >
-            Get Unshakeable
+            Shop Guides
           </Link>
         </nav>
       )}

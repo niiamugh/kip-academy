@@ -1,9 +1,18 @@
-import Image from "next/image";
 import Link from "next/link";
-import { getFeaturedProduct } from "@/data/products";
+import { products } from "@/data/products";
+import { HeroCarousel } from "@/components/HeroCarousel";
 
 export function Hero() {
-  const product = getFeaturedProduct();
+  // Live guides first, coming-soon titles at the end of the rotation.
+  const slides = [...products]
+    .sort((a, b) => Number(a.comingSoon) - Number(b.comingSoon))
+    .map((p) => ({
+      id: p.id,
+      title: p.title,
+      priceGHS: p.priceGHS,
+      coverImage: p.coverImage,
+      comingSoon: p.comingSoon,
+    }));
 
   return (
     <section className="bg-white">
@@ -24,35 +33,22 @@ export function Hero() {
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link
-              href="/store/unshakeable"
+              href="/store"
               className="flex items-center justify-center rounded-sm bg-red px-8 py-4 text-center font-body text-sm font-semibold text-white transition-colors hover:bg-red-dark"
             >
-              Get Unshakeable
+              Browse All Guides
             </Link>
             <Link
-              href="/store"
+              href="/store/unshakeable"
               className="flex items-center justify-center rounded-sm border border-ink/25 px-8 py-4 text-center font-body text-sm font-semibold text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white"
             >
-              Browse All Guides
+              Get Unshakeable
             </Link>
           </div>
         </div>
 
         <div className="lg:col-span-5">
-          <div className="relative mx-auto w-56 md:w-64 lg:ml-auto lg:mr-6 lg:w-72">
-            <div
-              aria-hidden
-              className="absolute -bottom-4 -right-4 h-full w-full bg-red"
-            />
-            <Image
-              src={product.coverImage}
-              alt={`${product.title} ebook cover`}
-              width={600}
-              height={849}
-              className="relative w-full shadow-xl"
-              priority
-            />
-          </div>
+          <HeroCarousel slides={slides} />
         </div>
       </div>
     </section>
