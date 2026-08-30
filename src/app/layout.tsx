@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { MetaPixel } from "@/components/MetaPixel";
-import { GA_MEASUREMENT_ID, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/config";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/config";
 
 const heading = Fraunces({
   subsets: ["latin"],
@@ -62,27 +62,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${heading.variable} ${body.variable} font-body antialiased`}>
         {/*
-          TODO: Google Analytics (GA4)
-          Paste your Measurement ID into NEXT_PUBLIC_GA_MEASUREMENT_ID (see
-          .env.local.example) or directly into GA_MEASUREMENT_ID in
-          src/lib/config.ts. The snippet below only loads once an ID is set.
+          Google Analytics 4 — base tag + page_view on every route change,
+          handled by src/components/GoogleAnalytics.tsx. Set the ID in
+          NEXT_PUBLIC_GA_MEASUREMENT_ID or src/lib/config.ts; it only
+          loads once an ID is set.
         */}
-        {GA_MEASUREMENT_ID && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-              strategy="afterInteractive"
-            />
-            <Script id="ga4" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_MEASUREMENT_ID}');
-              `}
-            </Script>
-          </>
-        )}
+        <GoogleAnalytics />
 
         {/*
           Meta / Facebook Pixel — base code + PageView on every route

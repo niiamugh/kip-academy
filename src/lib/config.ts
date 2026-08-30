@@ -50,7 +50,8 @@ export const PAYMENT_TRUST_NOTE =
 // GA4 Measurement ID (looks like "G-XXXXXXXXXX"). Set
 // NEXT_PUBLIC_GA_MEASUREMENT_ID in .env.local on the VPS, or paste the ID
 // as the fallback below. Blank = Google Analytics stays off.
-export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "";
+export const GA_MEASUREMENT_ID =
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-9WWF4B8C1B";
 
 // Meta/Facebook Pixel ID (pixel IDs are public — they appear in the page
 // source of every site that uses one, so committing it here is fine).
