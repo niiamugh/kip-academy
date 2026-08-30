@@ -43,7 +43,13 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
   },
   icons: {
-    icon: "/favicon.ico",
+    // ?v= busts browsers' sticky favicon caches — bump it whenever the
+    // logo changes, or the old icon can linger in tabs for days.
+    icon: [
+      { url: "/icon.png?v=2", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.ico?v=2", sizes: "48x48" },
+    ],
+    apple: [{ url: "/apple-icon.png?v=2" }],
   },
 };
 
