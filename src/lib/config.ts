@@ -48,9 +48,9 @@ export const PAYMENT_TRUST_NOTE =
 // Google Analytics. Leave blank to keep analytics disabled.
 export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "";
 
-// TODO: Paste your Meta/Facebook Pixel ID to enable Facebook Pixel.
-// Leave blank to keep the pixel disabled.
-export const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FB_PIXEL_ID || "";
+// Meta/Facebook Pixel ID (pixel IDs are public — they appear in the page
+// source of every site that uses one, so committing it here is fine).
+export const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FB_PIXEL_ID || "1074141188811054";
 
 export const SITE_NAME = "KIP Academy";
 export const SITE_TAGLINE = "Knowledge Is Power";
