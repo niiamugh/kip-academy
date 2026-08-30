@@ -102,7 +102,7 @@ export function ThankYouClient() {
             </h1>
             <p className="mt-4 font-body text-base leading-relaxed text-ink/70">
               A receipt has been sent to your email by Paystack. Download your
-              PDF below — and keep this page's link if you ever need to
+              PDF below — and keep this page&rsquo;s link if you ever need to
               download it again.
             </p>
 
