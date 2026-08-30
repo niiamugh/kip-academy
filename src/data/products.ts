@@ -95,7 +95,7 @@ export const products: Product[] = [
     priceGHS: 90,
     priceUSD: 7,
     coverImage: "/covers/study-abroad.jpg",
-    paymentLink: DEFAULT_PAYMENT_LINK,
+    paymentLink: "https://www.skillspad.org/products/study-abroad-work-abroad-tips-japa",
     featured: false,
     comingSoon: false,
     painPoints: [
