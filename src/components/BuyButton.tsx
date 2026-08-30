@@ -112,7 +112,7 @@ export function BuyButton({
         type="email"
         required
         autoFocus
-        placeholder="you@example.com"
+        placeholder="Enter your email (you@example.com)"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         className="w-full rounded-sm border border-ink/25 bg-white px-4 py-3 font-body text-sm text-ink placeholder:text-ink/60 focus:border-red focus:outline-none"
