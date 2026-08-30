@@ -79,14 +79,14 @@ export function ThankYouClient() {
   }, [reference]);
 
   return (
-    <section className="bg-navy py-24 text-offwhite md:py-32">
+    <section className="bg-white py-24 md:py-32">
       <div className="mx-auto max-w-2xl px-5 text-center md:px-8">
         {state.status === "verifying" && (
           <>
-            <h1 className="font-heading text-3xl font-extrabold md:text-4xl">
+            <h1 className="font-heading text-3xl font-semibold text-ink md:text-4xl">
               Confirming your payment…
             </h1>
-            <p className="mt-4 font-body text-base text-offwhite/70">
+            <p className="mt-4 font-body text-base text-ink/70">
               One moment while we check with Paystack.
             </p>
           </>
@@ -94,13 +94,13 @@ export function ThankYouClient() {
 
         {state.status === "success" && (
           <>
-            <p className="font-heading text-xs font-bold tracking-[0.25em] text-gold">
-              PAYMENT CONFIRMED
+            <p className="font-body text-sm font-semibold text-red">
+              Payment confirmed
             </p>
-            <h1 className="mt-4 font-heading text-3xl font-extrabold md:text-4xl">
+            <h1 className="mt-3 font-heading text-3xl font-semibold text-ink md:text-4xl">
               Thank you — {state.data.product?.title ?? "your guide"} is yours.
             </h1>
-            <p className="mt-4 font-body text-base leading-relaxed text-offwhite/70">
+            <p className="mt-4 font-body text-base leading-relaxed text-ink/70">
               A receipt has been sent to your email by Paystack. Download your
               PDF below — and keep this page's link if you ever need to
               download it again.
@@ -111,17 +111,17 @@ export function ThankYouClient() {
                 href={`/api/download?reference=${encodeURIComponent(
                   state.data.reference ?? ""
                 )}`}
-                className="mx-auto mt-8 flex max-w-xs items-center justify-center rounded-sm bg-gold px-8 py-4 font-heading text-sm font-bold text-navy transition-colors hover:bg-gold-light"
+                className="mx-auto mt-8 flex max-w-xs items-center justify-center rounded-sm bg-red px-8 py-4 font-body text-sm font-semibold text-white transition-colors hover:bg-red-dark"
               >
                 Download your PDF
               </a>
             ) : (
-              <p className="mx-auto mt-8 max-w-md font-body text-sm leading-relaxed text-offwhite/70">
+              <p className="mx-auto mt-8 max-w-md font-body text-sm leading-relaxed text-ink/70">
                 Your payment is confirmed, but the download isn&rsquo;t ready on
                 our end — message us on{" "}
                 <a
                   href={WHATSAPP_LINK_WITH_MESSAGE}
-                  className="font-semibold text-gold hover:text-gold-light"
+                  className="font-semibold text-red underline-offset-4 hover:underline"
                 >
                   WhatsApp
                 </a>{" "}
@@ -131,7 +131,7 @@ export function ThankYouClient() {
 
             <Link
               href="/store"
-              className="mt-6 inline-block font-body text-sm text-offwhite/50 transition-colors hover:text-gold"
+              className="mt-6 inline-block font-body text-sm text-ink/60 underline-offset-4 transition-colors hover:text-red hover:underline"
             >
               Browse more guides →
             </Link>
@@ -140,15 +140,15 @@ export function ThankYouClient() {
 
         {state.status === "failed" && (
           <>
-            <h1 className="font-heading text-3xl font-extrabold md:text-4xl">
+            <h1 className="font-heading text-3xl font-semibold text-ink md:text-4xl">
               We couldn&rsquo;t confirm that payment.
             </h1>
-            <p className="mx-auto mt-4 max-w-md font-body text-base leading-relaxed text-offwhite/70">
+            <p className="mx-auto mt-4 max-w-md font-body text-base leading-relaxed text-ink/70">
               If you were charged, don&rsquo;t worry — your money isn&rsquo;t
               lost. Message us on{" "}
               <a
                 href={WHATSAPP_LINK_WITH_MESSAGE}
-                className="font-semibold text-gold hover:text-gold-light"
+                className="font-semibold text-red underline-offset-4 hover:underline"
               >
                 WhatsApp
               </a>{" "}
@@ -156,7 +156,7 @@ export function ThankYouClient() {
             </p>
             <Link
               href="/store"
-              className="mt-8 inline-block font-body text-sm text-offwhite/50 transition-colors hover:text-gold"
+              className="mt-8 inline-block font-body text-sm text-ink/60 underline-offset-4 transition-colors hover:text-red hover:underline"
             >
               ← Back to the store
             </Link>
@@ -165,15 +165,15 @@ export function ThankYouClient() {
 
         {state.status === "error" && (
           <>
-            <h1 className="font-heading text-3xl font-extrabold md:text-4xl">
+            <h1 className="font-heading text-3xl font-semibold text-ink md:text-4xl">
               Something went wrong on our end.
             </h1>
-            <p className="mx-auto mt-4 max-w-md font-body text-base leading-relaxed text-offwhite/70">
+            <p className="mx-auto mt-4 max-w-md font-body text-base leading-relaxed text-ink/70">
               Please refresh this page in a moment. If it keeps happening,
               reach us on{" "}
               <a
                 href={WHATSAPP_LINK_WITH_MESSAGE}
-                className="font-semibold text-gold hover:text-gold-light"
+                className="font-semibold text-red underline-offset-4 hover:underline"
               >
                 WhatsApp
               </a>{" "}

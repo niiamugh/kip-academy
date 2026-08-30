@@ -16,8 +16,8 @@ export default function ThankYouPage() {
   return (
     <Suspense
       fallback={
-        <section className="bg-navy py-24 text-center text-offwhite md:py-32">
-          <p className="font-body text-offwhite/70">Loading…</p>
+        <section className="bg-white py-24 text-center md:py-32">
+          <p className="font-body text-ink/70">Loading…</p>
         </section>
       }
     >

@@ -39,7 +39,7 @@ export function BuyButton({
 
   const buttonClasses =
     className ??
-    "flex w-full max-w-xs items-center justify-center rounded-sm bg-gold px-8 py-4 text-center font-heading text-sm font-bold text-navy transition-colors hover:bg-gold-light disabled:cursor-wait disabled:opacity-60";
+    "flex w-full max-w-xs items-center justify-center rounded-sm bg-red px-8 py-4 text-center font-body text-sm font-semibold text-white transition-colors hover:bg-red-dark disabled:cursor-wait disabled:opacity-60";
 
   function handleExpand() {
     fbqTrack("InitiateCheckout", {
@@ -107,12 +107,12 @@ export function BuyButton({
         placeholder="you@example.com"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="w-full rounded-sm border border-navy/20 bg-white px-4 py-3 font-body text-sm text-navy placeholder:text-navy/40 focus:border-gold focus:outline-none"
+        className="w-full rounded-sm border border-ink/25 bg-white px-4 py-3 font-body text-sm text-ink placeholder:text-ink/60 focus:border-red focus:outline-none"
       />
       <button type="submit" disabled={loading} className={buttonClasses}>
         {loading ? "Starting checkout…" : `Pay GH₵${priceGHS} with Paystack`}
       </button>
-      {error && <p className="font-body text-xs text-red-600">{error}</p>}
+      {error && <p className="font-body text-xs text-red">{error}</p>}
     </form>
   );
 }

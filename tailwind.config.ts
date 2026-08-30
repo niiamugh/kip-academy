@@ -9,21 +9,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: {
-          DEFAULT: "#0F1A33",
-          light: "#1B2A4A",
-          dark: "#0A1224",
+        // Brand palette sampled from the KIP logo: near-black ink, pure
+        // white ground, and the logo's two reds.
+        ink: {
+          DEFAULT: "#101010",
+          soft: "#1C1C1C",
         },
-        gold: {
-          DEFAULT: "#C9A23E",
-          light: "#E0C271",
-          dark: "#A9832E",
+        red: {
+          DEFAULT: "#C40009", // wordmark red — 6.5:1 on white
+          bright: "#E8000D", // icon-tile red — small accents only
+          dark: "#9B0007",
         },
-        offwhite: "#F7F5F0",
+        haze: "#F5F5F5", // neutral secondary surface (chroma 0)
       },
       fontFamily: {
-        heading: ["var(--font-heading)", "sans-serif"],
-        body: ["var(--font-body)", "sans-serif"],
+        heading: ["var(--font-heading)", "Georgia", "serif"],
+        body: ["var(--font-body)", "system-ui", "sans-serif"],
       },
       keyframes: {
         "fade-up": {

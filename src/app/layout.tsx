@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Inter } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/Header";
@@ -8,9 +8,9 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { MetaPixel } from "@/components/MetaPixel";
 import { GA_MEASUREMENT_ID, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/config";
 
-const heading = Poppins({
+const heading = Fraunces({
   subsets: ["latin"],
-  weight: ["700", "800"],
+  weight: ["500", "600", "700"],
   variable: "--font-heading",
   display: "swap",
 });

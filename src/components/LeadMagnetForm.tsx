@@ -33,9 +33,9 @@ export function LeadMagnetForm({ source = "homepage-lead-magnet" }: { source?: s
 
   if (status === "success") {
     return (
-      <div className="flex items-start gap-3 rounded-sm border border-gold/40 bg-navy-light/60 p-5">
-        <IconCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-gold" />
-        <p className="font-body text-sm leading-relaxed text-offwhite/90">
+      <div className="flex items-start gap-3 rounded-sm border border-ink/15 bg-haze p-5">
+        <IconCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-red" />
+        <p className="font-body text-sm leading-relaxed text-ink/80">
           Check your inbox for your free chapter! If it doesn&rsquo;t arrive in a
           few minutes, check your spam folder.
         </p>
@@ -54,7 +54,7 @@ export function LeadMagnetForm({ source = "homepage-lead-magnet" }: { source?: s
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Your name"
-            className="w-full rounded-sm border border-offwhite/25 bg-transparent px-4 py-3 font-body text-sm text-offwhite placeholder:text-offwhite/40 focus:border-gold"
+            className="w-full rounded-sm border border-ink/25 bg-white px-4 py-3 font-body text-sm text-ink placeholder:text-ink/60 focus:border-red"
           />
         </label>
         <label className="flex-1">
@@ -65,19 +65,19 @@ export function LeadMagnetForm({ source = "homepage-lead-magnet" }: { source?: s
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Your email"
-            className="w-full rounded-sm border border-offwhite/25 bg-transparent px-4 py-3 font-body text-sm text-offwhite placeholder:text-offwhite/40 focus:border-gold"
+            className="w-full rounded-sm border border-ink/25 bg-white px-4 py-3 font-body text-sm text-ink placeholder:text-ink/60 focus:border-red"
           />
         </label>
       </div>
       <button
         type="submit"
         disabled={status === "loading"}
-        className="whitespace-nowrap rounded-sm bg-gold px-7 py-3 font-heading text-sm font-bold text-navy transition-colors hover:bg-gold-light disabled:opacity-60"
+        className="whitespace-nowrap rounded-sm bg-red px-7 py-3 font-body text-sm font-semibold text-white transition-colors hover:bg-red-dark disabled:opacity-60"
       >
         {status === "loading" ? "Sending..." : "Send Me the Chapter"}
       </button>
       {status === "error" && (
-        <p className="font-body text-xs text-red-300 sm:basis-full" role="alert">
+        <p className="font-body text-xs text-red sm:basis-full" role="alert">
           Something went wrong. Please try again in a moment.
         </p>
       )}

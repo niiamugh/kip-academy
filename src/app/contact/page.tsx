@@ -9,15 +9,13 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="bg-navy py-20 text-offwhite md:py-28">
+    <section className="bg-white py-20 md:py-28">
       <div className="mx-auto max-w-3xl px-5 md:px-8">
-        <p className="font-heading text-xs font-bold tracking-[0.25em] text-gold">
-          GET IN TOUCH
-        </p>
-        <h1 className="mt-4 max-w-[22ch] font-heading text-3xl font-extrabold md:text-5xl">
+        <p className="font-body text-sm font-semibold text-red">Get in touch</p>
+        <h1 className="mt-3 max-w-[22ch] font-heading text-3xl font-semibold text-ink md:text-5xl">
           Questions before you buy? Message us.
         </h1>
-        <p className="mt-5 max-w-[54ch] font-body text-base leading-relaxed text-offwhite/70">
+        <p className="mt-5 max-w-[54ch] font-body text-base leading-relaxed text-ink/70">
           WhatsApp is the fastest way to reach us — most messages get a reply
           the same day.
         </p>
@@ -27,21 +25,21 @@ export default function ContactPage() {
             href={SOCIAL_LINKS.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-3 rounded-sm bg-[#25D366] px-8 py-4 font-heading text-sm font-bold text-navy transition-transform hover:scale-[1.02]"
+            className="flex items-center justify-center gap-3 rounded-sm bg-[#25D366] px-8 py-4 font-body text-sm font-semibold text-ink transition-colors hover:bg-[#1fb355]"
           >
             <IconWhatsApp className="h-5 w-5" />
             Chat on WhatsApp
           </a>
           <a
             href={`mailto:${CONTACT_EMAIL}`}
-            className="flex items-center justify-center rounded-sm border border-offwhite/30 px-8 py-4 font-heading text-sm font-bold text-offwhite transition-colors hover:border-gold hover:text-gold"
+            className="flex items-center justify-center rounded-sm border border-ink/25 px-8 py-4 font-body text-sm font-semibold text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white"
           >
             {CONTACT_EMAIL}
           </a>
         </div>
 
-        <div className="mt-14 border-t border-offwhite/10 pt-10">
-          <p className="font-heading text-xs font-bold tracking-[0.2em] text-offwhite/45">
+        <div className="mt-14 border-t border-ink/10 pt-10">
+          <p className="font-body text-xs font-semibold tracking-[0.18em] text-ink/50">
             FOLLOW ALONG
           </p>
           <div className="mt-5 flex items-center gap-5">
@@ -50,7 +48,7 @@ export default function ContactPage() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="KIP Academy on Facebook"
-              className="text-offwhite/70 transition-colors hover:text-gold"
+              className="text-ink/60 transition-colors hover:text-red"
             >
               <IconFacebook className="h-6 w-6" />
             </a>
@@ -59,7 +57,7 @@ export default function ContactPage() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="KIP Academy on Instagram"
-              className="text-offwhite/70 transition-colors hover:text-gold"
+              className="text-ink/60 transition-colors hover:text-red"
             >
               <IconInstagram className="h-6 w-6" />
             </a>

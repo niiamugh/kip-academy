@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #f7f5f0;
-  --foreground: #0f1a33;
+  --background: #ffffff;
+  --foreground: #101010;
 }
 
 body {
@@ -21,7 +21,13 @@ body {
   h2,
   h3,
   h4 {
-    @apply font-heading uppercase tracking-tight;
+    @apply font-heading;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 
   a:focus-visible,
@@ -29,14 +35,14 @@ body {
   input:focus-visible,
   textarea:focus-visible,
   [tabindex]:focus-visible {
-    outline: 2px solid #c9a23e;
+    outline: 2px solid #c40009;
     outline-offset: 3px;
     border-radius: 2px;
   }
 
   ::selection {
-    background-color: #c9a23e;
-    color: #0f1a33;
+    background-color: #c40009;
+    color: #ffffff;
   }
 }
 

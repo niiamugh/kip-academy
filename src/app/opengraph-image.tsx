@@ -15,26 +15,29 @@ export default async function OpengraphImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#0F1A33",
-          fontFamily: "Arial, Helvetica, sans-serif",
+          backgroundColor: "#ffffff",
+          fontFamily: "Georgia, 'Times New Roman', serif",
         }}
       >
         <div
           style={{
-            fontSize: 22,
-            letterSpacing: 10,
-            color: "#C9A23E",
+            display: "flex",
+            alignItems: "baseline",
+            gap: 18,
+            fontSize: 64,
             fontWeight: 700,
+            color: "#101010",
           }}
         >
-          KIP ACADEMY
+          KIP
+          <span style={{ color: "#C40009" }}>Academy</span>
         </div>
         <div
           style={{
-            marginTop: 28,
-            fontSize: 72,
-            fontWeight: 800,
-            color: "#F7F5F0",
+            marginTop: 36,
+            fontSize: 84,
+            fontWeight: 700,
+            color: "#101010",
             textAlign: "center",
             padding: "0 60px",
           }}
@@ -43,14 +46,23 @@ export default async function OpengraphImage() {
         </div>
         <div
           style={{
-            marginTop: 24,
-            fontSize: 28,
-            color: "#C9A23E",
-            letterSpacing: 4,
+            marginTop: 30,
+            fontSize: 30,
+            color: "#C40009",
+            letterSpacing: 3,
+            fontWeight: 700,
           }}
         >
           Own Both.
         </div>
+        <div
+          style={{
+            marginTop: 48,
+            width: 120,
+            height: 8,
+            backgroundColor: "#C40009",
+          }}
+        />
       </div>
     ),
     { ...size }

@@ -22,15 +22,18 @@ const TESTIMONIALS = [
 
 export function Testimonials() {
   return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+    <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-3">
       {TESTIMONIALS.map((t) => (
-        <figure key={t.name} className="border border-navy/10 bg-white p-6">
-          <blockquote className="font-body text-sm leading-relaxed text-navy/75">
-            &ldquo;{t.quote}&rdquo;
+        <figure key={t.name} className="border-t-2 border-ink pt-6">
+          <span aria-hidden className="font-heading text-4xl font-semibold leading-none text-red">
+            &ldquo;
+          </span>
+          <blockquote className="mt-2 font-body text-sm leading-relaxed text-ink/75">
+            {t.quote}
           </blockquote>
-          <figcaption className="mt-5 font-heading text-sm font-bold text-navy">
+          <figcaption className="mt-5 font-heading text-sm font-semibold text-ink">
             {t.name}
-            <span className="block font-body text-xs font-normal text-navy/50">
+            <span className="mt-0.5 block font-body text-xs font-normal text-ink/60">
               {t.role}
             </span>
           </figcaption>

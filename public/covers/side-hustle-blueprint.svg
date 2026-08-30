@@ -1,20 +1,19 @@
 <svg viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg">
-  <rect width="600" height="800" fill="#0F1A33"/>
-  <rect x="0" y="0" width="600" height="800" fill="#0F1A33" opacity="0.55"/>
-  <rect x="0" y="0" width="600" height="800" fill="none" stroke="#C9A23E" stroke-width="4" opacity="0.5"/>
-  <rect x="28" y="28" width="544" height="744" fill="none" stroke="#C9A23E" stroke-width="1.5" opacity="0.35"/>
+  <rect width="600" height="800" fill="#101010"/>
+  <rect x="28" y="28" width="544" height="744" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.25"/>
+  <rect x="0" y="0" width="600" height="14" fill="#E8000D"/>
 
-  <text x="300" y="140" text-anchor="middle" font-family="Georgia, serif" font-size="18" letter-spacing="6" fill="#C9A23E" opacity="0.7">KIP ACADEMY</text>
-  <line x1="230" y1="163" x2="370" y2="163" stroke="#C9A23E" stroke-width="1" opacity="0.5"/>
+  <text x="300" y="140" text-anchor="middle" font-family="Georgia, serif" font-size="18" letter-spacing="6" fill="#ffffff" opacity="0.7">KIP ACADEMY</text>
+  <line x1="230" y1="163" x2="370" y2="163" stroke="#E8000D" stroke-width="1.5"/>
 
-  <text x="300" y="360" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="46" letter-spacing="1" fill="#F7F5F0" opacity="0.75">THE SIDE</text>
-  <text x="300" y="415" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="46" letter-spacing="1" fill="#F7F5F0" opacity="0.75">HUSTLE</text>
-  <text x="300" y="470" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="46" letter-spacing="1" fill="#C9A23E" opacity="0.75">BLUEPRINT</text>
+  <text x="300" y="360" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="46" letter-spacing="1" fill="#ffffff" opacity="0.9">THE SIDE</text>
+  <text x="300" y="415" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="46" letter-spacing="1" fill="#ffffff" opacity="0.9">HUSTLE</text>
+  <text x="300" y="470" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="46" letter-spacing="1" fill="#E8000D">BLUEPRINT</text>
 
-  <g opacity="0.7">
-    <rect x="235" y="560" width="130" height="34" rx="2" fill="none" stroke="#C9A23E" stroke-width="1.5"/>
-    <text x="300" y="583" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="2" fill="#C9A23E">COMING SOON</text>
+  <g opacity="0.9">
+    <rect x="235" y="560" width="130" height="34" rx="2" fill="none" stroke="#E8000D" stroke-width="1.5"/>
+    <text x="300" y="583" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="2" fill="#ffffff">COMING SOON</text>
   </g>
 
-  <text x="300" y="740" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="4" fill="#C9A23E" opacity="0.6">KNOWLEDGE IS POWER</text>
+  <text x="300" y="740" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="4" fill="#ffffff" opacity="0.55">KNOWLEDGE IS POWER</text>
 </svg>

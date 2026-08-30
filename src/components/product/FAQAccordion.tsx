@@ -35,7 +35,7 @@ export function FAQAccordion() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <div className="divide-y divide-navy/10 border-y border-navy/10">
+    <div className="divide-y divide-ink/10 border-y border-ink/10">
       {FAQS.map((faq, i) => {
         const isOpen = openIndex === i;
         return (
@@ -46,17 +46,17 @@ export function FAQAccordion() {
               aria-expanded={isOpen}
               onClick={() => setOpenIndex(isOpen ? null : i)}
             >
-              <span className="font-heading text-base font-bold text-navy">
+              <span className="font-heading text-base font-semibold text-ink">
                 {faq.question}
               </span>
               <IconChevronDown
-                className={`h-5 w-5 flex-shrink-0 text-gold-dark transition-transform ${
+                className={`h-5 w-5 flex-shrink-0 text-red transition-transform ${
                   isOpen ? "rotate-180" : ""
                 }`}
               />
             </button>
             {isOpen && (
-              <p className="pb-5 pr-8 font-body text-sm leading-relaxed text-navy/70">
+              <p className="pb-5 pr-8 font-body text-sm leading-relaxed text-ink/70">
                 {faq.answer}
               </p>
             )}

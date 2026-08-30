@@ -8,7 +8,7 @@ export function FeaturedProduct() {
   const product = getFeaturedProduct();
 
   return (
-    <section className="bg-navy py-20 text-offwhite md:py-24">
+    <section className="bg-haze py-20 md:py-24">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-5 md:px-8 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-5">
           <div className="mx-auto max-w-xs lg:mx-0">
@@ -17,27 +17,27 @@ export function FeaturedProduct() {
               alt={`${product.title} ebook cover`}
               width={600}
               height={849}
-              className="w-full shadow-2xl"
+              className="w-full shadow-xl"
             />
           </div>
         </div>
 
         <div className="lg:col-span-7">
-          <p className="font-heading text-xs font-bold tracking-[0.25em] text-gold">
-            THE FLAGSHIP GUIDE
+          <p className="font-body text-sm font-semibold text-red">
+            The flagship guide
           </p>
-          <h2 className="mt-4 font-heading text-3xl font-extrabold md:text-4xl">
+          <h2 className="mt-3 font-heading text-3xl font-semibold text-ink md:text-4xl">
             {product.title}
           </h2>
-          <p className="mt-4 max-w-[54ch] font-body text-base leading-relaxed text-offwhite/75">
+          <p className="mt-4 max-w-[54ch] font-body text-base leading-relaxed text-ink/70">
             {product.subtitle}
           </p>
 
           <div className="mt-8 flex items-baseline gap-3">
-            <span className="font-heading text-3xl font-extrabold text-gold">
+            <span className="font-heading text-3xl font-semibold text-red">
               GH&#8373;{product.priceGHS}
             </span>
-            <span className="font-body text-sm text-offwhite/50">
+            <span className="font-body text-sm text-ink/55">
               (&asymp; ${product.priceUSD} USD)
             </span>
           </div>
@@ -51,13 +51,13 @@ export function FeaturedProduct() {
             />
             <Link
               href={`/store/${product.id}`}
-              className="flex items-center justify-center rounded-sm border border-offwhite/30 px-8 py-4 text-center font-heading text-sm font-bold text-offwhite transition-colors hover:border-gold hover:text-gold"
+              className="flex items-center justify-center rounded-sm border border-ink/25 px-8 py-4 text-center font-body text-sm font-semibold text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white"
             >
               Learn More
             </Link>
           </div>
 
-          <p className="mt-5 font-body text-xs text-offwhite/45">{PAYMENT_TRUST_NOTE}</p>
+          <p className="mt-5 font-body text-xs text-ink/55">{PAYMENT_TRUST_NOTE}</p>
         </div>
       </div>
     </section>

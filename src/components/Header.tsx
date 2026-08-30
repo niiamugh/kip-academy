@@ -29,15 +29,22 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 bg-navy text-offwhite shadow-[0_1px_0_0_rgba(201,162,62,0.25)]">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 md:px-8">
+    <header className="sticky top-0 z-50 border-b border-ink/10 bg-white">
+      <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between px-5 md:px-8">
         <Link href="/" className="flex items-center gap-3" aria-label="KIP Academy home">
-          <Image src="/logo.png" alt="" width={44} height={54} className="h-11 w-auto" priority />
+          <Image
+            src="/logo-mark.png"
+            alt=""
+            width={40}
+            height={40}
+            className="h-10 w-10 rounded-lg"
+            priority
+          />
           <span className="flex flex-col leading-none">
-            <span className="font-heading text-lg font-extrabold tracking-wide">
-              KIP <span className="text-gold">ACADEMY</span>
+            <span className="font-heading text-xl font-semibold tracking-tight text-ink">
+              KIP <span className="text-red">Academy</span>
             </span>
-            <span className="mt-1 font-heading text-[0.6rem] font-bold tracking-[0.25em] text-gold/80">
+            <span className="mt-1 font-body text-[0.6rem] font-semibold tracking-[0.22em] text-ink/50">
               KNOWLEDGE IS POWER
             </span>
           </span>
@@ -48,14 +55,16 @@ export function Header() {
             <Link
               key={l.href}
               href={l.href}
-              className="font-body text-sm font-medium text-offwhite/85 transition-colors hover:text-gold"
+              className={`font-body text-sm font-medium transition-colors hover:text-red ${
+                pathname === l.href ? "text-ink" : "text-ink/60"
+              }`}
             >
               {l.label}
             </Link>
           ))}
           <Link
             href="/store/unshakeable"
-            className="rounded-sm bg-gold px-5 py-2.5 font-heading text-sm font-bold text-navy transition-colors hover:bg-gold-light"
+            className="rounded-sm bg-red px-5 py-2.5 font-body text-sm font-semibold text-white transition-colors hover:bg-red-dark"
           >
             Get Unshakeable
           </Link>
@@ -63,7 +72,7 @@ export function Header() {
 
         <button
           type="button"
-          className="grid h-11 w-11 place-items-center text-offwhite md:hidden"
+          className="grid h-11 w-11 place-items-center text-ink md:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -74,21 +83,21 @@ export function Header() {
 
       {open && (
         <nav
-          className="flex flex-col gap-1 border-t border-gold/15 bg-navy px-5 pb-8 pt-2 md:hidden"
+          className="flex flex-col gap-1 border-t border-ink/10 bg-white px-5 pb-8 pt-2 md:hidden"
           aria-label="Primary mobile"
         >
           {NAV_LINKS.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="border-b border-offwhite/10 py-4 font-body text-base text-offwhite/90"
+              className="border-b border-ink/10 py-4 font-body text-base text-ink/80"
             >
               {l.label}
             </Link>
           ))}
           <Link
             href="/store/unshakeable"
-            className="mt-5 flex h-12 items-center justify-center rounded-sm bg-gold font-heading text-sm font-bold text-navy"
+            className="mt-5 flex h-12 items-center justify-center rounded-sm bg-red font-body text-sm font-semibold text-white"
           >
             Get Unshakeable
           </Link>

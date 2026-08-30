@@ -9,6 +9,7 @@ import { Testimonials } from "@/components/product/Testimonials";
 import { FAQAccordion } from "@/components/product/FAQAccordion";
 import { LeadMagnetSection } from "@/components/LeadMagnetSection";
 import { BuyButton } from "@/components/BuyButton";
+import { IconCheck, IconClose } from "@/components/icons";
 
 export function generateStaticParams() {
   return products.map((p) => ({ id: p.id }));
@@ -34,7 +35,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
   if (product.comingSoon) {
     return (
       <>
-        <section className="bg-navy py-20 text-offwhite md:py-28">
+        <section className="bg-white py-20 md:py-28">
           <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-5 md:px-8 lg:grid-cols-12">
             <div className="mx-auto max-w-xs lg:col-span-5 lg:mx-0">
               <Image
@@ -42,22 +43,22 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                 alt={`${product.title} ebook cover`}
                 width={600}
                 height={800}
-                className="w-full opacity-80"
+                className="w-full opacity-80 shadow-lg"
               />
             </div>
             <div className="lg:col-span-7">
-              <p className="font-heading text-xs font-bold tracking-[0.25em] text-gold">
-                COMING SOON
+              <p className="font-body text-sm font-semibold text-red">
+                Coming soon
               </p>
-              <h1 className="mt-4 font-heading text-3xl font-extrabold md:text-5xl">
+              <h1 className="mt-3 font-heading text-3xl font-semibold text-ink md:text-5xl">
                 {product.title}
               </h1>
-              <p className="mt-5 max-w-[54ch] font-body text-base leading-relaxed text-offwhite/70">
+              <p className="mt-5 max-w-[54ch] font-body text-base leading-relaxed text-ink/70">
                 {product.subtitle}
               </p>
               <Link
                 href="/store#notify-me"
-                className="mt-8 inline-flex items-center justify-center rounded-sm bg-gold px-8 py-4 font-heading text-sm font-bold text-navy transition-colors hover:bg-gold-light"
+                className="mt-8 inline-flex items-center justify-center rounded-sm bg-red px-8 py-4 font-body text-sm font-semibold text-white transition-colors hover:bg-red-dark"
               >
                 Notify Me When It Launches
               </Link>
@@ -74,34 +75,35 @@ export default function ProductPage({ params }: { params: { id: string } }) {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy py-16 text-offwhite md:py-24">
+      <section className="bg-white py-16 md:py-24">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-5 md:px-8 lg:grid-cols-12">
-          <div className="mx-auto max-w-xs lg:col-span-5 lg:mx-0">
-            <Image
-              src={product.coverImage}
-              alt={`${product.title} ebook cover`}
-              width={600}
-              height={849}
-              className="w-full shadow-2xl"
-              priority
-            />
+          <div className="mx-auto w-64 max-w-full lg:col-span-5 lg:mx-0 lg:w-80">
+            <div className="relative">
+              <div aria-hidden className="absolute -bottom-4 -right-4 h-full w-full bg-red" />
+              <Image
+                src={product.coverImage}
+                alt={`${product.title} ebook cover`}
+                width={600}
+                height={849}
+                className="relative w-full shadow-xl"
+                priority
+              />
+            </div>
           </div>
           <div className="lg:col-span-7">
-            <p className="font-heading text-xs font-bold tracking-[0.25em] text-gold">
-              PDF GUIDE
-            </p>
-            <h1 className="mt-4 font-heading text-3xl font-extrabold md:text-5xl">
+            <p className="font-body text-sm font-semibold text-red">PDF guide</p>
+            <h1 className="mt-3 font-heading text-3xl font-semibold text-ink md:text-5xl">
               {product.title}
             </h1>
-            <p className="mt-5 max-w-[54ch] font-body text-base leading-relaxed text-offwhite/75 md:text-lg">
+            <p className="mt-5 max-w-[54ch] font-body text-base leading-relaxed text-ink/70 md:text-lg">
               {product.subtitle}
             </p>
 
             <div className="mt-8 flex items-baseline gap-3">
-              <span className="font-heading text-3xl font-extrabold text-gold">
+              <span className="font-heading text-3xl font-semibold text-red">
                 GH&#8373;{product.priceGHS}
               </span>
-              <span className="font-body text-sm text-offwhite/50">
+              <span className="font-body text-sm text-ink/55">
                 (&asymp; ${product.priceUSD} USD)
               </span>
             </div>
@@ -114,25 +116,32 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                 fallbackLink={product.paymentLink}
               />
             </div>
-            <p className="mt-4 font-body text-xs text-offwhite/45">{PAYMENT_TRUST_NOTE}</p>
+            <p className="mt-4 font-body text-xs text-ink/55">{PAYMENT_TRUST_NOTE}</p>
           </div>
+        </div>
+      </section>
+
+      {/* Trust strip */}
+      <section className="bg-ink py-10">
+        <div className="mx-auto max-w-4xl px-5 md:px-8">
+          <TrustStrip />
         </div>
       </section>
 
       {/* Is this you? */}
       {product.painPoints && (
-        <section className="bg-offwhite py-16 md:py-20">
+        <section className="bg-haze py-16 md:py-20">
           <div className="mx-auto max-w-4xl px-5 md:px-8">
-            <h2 className="font-heading text-2xl font-extrabold text-navy md:text-3xl">
+            <h2 className="font-heading text-2xl font-semibold text-ink md:text-3xl">
               Is this you?
             </h2>
             <ul className="mt-8 flex flex-col gap-5">
               {product.painPoints.map((point) => (
-                <li
-                  key={point}
-                  className="border-l-2 border-gold/60 pl-5 font-body text-base leading-relaxed text-navy/75"
-                >
-                  {point}
+                <li key={point} className="flex items-start gap-3">
+                  <IconClose className="mt-1 h-4 w-4 flex-shrink-0 text-red" />
+                  <span className="font-body text-base leading-relaxed text-ink/75">
+                    {point}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -144,17 +153,14 @@ export default function ProductPage({ params }: { params: { id: string } }) {
       {product.whatsInside && (
         <section className="bg-white py-16 md:py-20">
           <div className="mx-auto max-w-4xl px-5 md:px-8">
-            <h2 className="font-heading text-2xl font-extrabold text-navy md:text-3xl">
+            <h2 className="font-heading text-2xl font-semibold text-ink md:text-3xl">
               What&rsquo;s inside
             </h2>
             <ul className="mt-8 flex flex-col gap-5">
               {product.whatsInside.map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <span
-                    aria-hidden
-                    className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gold-dark"
-                  />
-                  <span className="font-body text-base leading-relaxed text-navy/75">
+                  <IconCheck className="mt-1 h-4 w-4 flex-shrink-0 text-red" />
+                  <span className="font-body text-base leading-relaxed text-ink/75">
                     {item}
                   </span>
                 </li>
@@ -166,16 +172,16 @@ export default function ProductPage({ params }: { params: { id: string } }) {
 
       {/* Who it's for */}
       {product.whoItsFor && (
-        <section className="bg-offwhite py-16 md:py-20">
+        <section className="bg-haze py-16 md:py-20">
           <div className="mx-auto max-w-4xl px-5 md:px-8">
-            <h2 className="font-heading text-2xl font-extrabold text-navy md:text-3xl">
+            <h2 className="font-heading text-2xl font-semibold text-ink md:text-3xl">
               Who this is for
             </h2>
-            <ul className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-3">
+            <ul className="mt-8 grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-3">
               {product.whoItsFor.map((item) => (
                 <li
                   key={item}
-                  className="border border-navy/10 bg-white p-5 font-body text-sm leading-relaxed text-navy/75"
+                  className="border-t-2 border-ink pt-4 font-body text-sm leading-relaxed text-ink/75"
                 >
                   {item}
                 </li>
@@ -185,29 +191,22 @@ export default function ProductPage({ params }: { params: { id: string } }) {
         </section>
       )}
 
-      {/* Trust strip */}
-      <section className="bg-navy py-12">
-        <div className="mx-auto max-w-4xl px-5 md:px-8">
-          <TrustStrip />
-        </div>
-      </section>
-
       {/* Testimonials */}
-      <section className="bg-offwhite py-16 md:py-20">
+      <section className="bg-white py-16 md:py-20">
         <div className="mx-auto max-w-6xl px-5 md:px-8">
-          <h2 className="font-heading text-2xl font-extrabold text-navy md:text-3xl">
+          <h2 className="font-heading text-2xl font-semibold text-ink md:text-3xl">
             What readers say
           </h2>
-          <div className="mt-8">
+          <div className="mt-10">
             <Testimonials />
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="bg-white py-16 md:py-20">
+      <section className="bg-haze py-16 md:py-20">
         <div className="mx-auto max-w-3xl px-5 md:px-8">
-          <h2 className="font-heading text-2xl font-extrabold text-navy md:text-3xl">
+          <h2 className="font-heading text-2xl font-semibold text-ink md:text-3xl">
             Frequently asked questions
           </h2>
           <div className="mt-8">
@@ -217,12 +216,12 @@ export default function ProductPage({ params }: { params: { id: string } }) {
       </section>
 
       {/* Final CTA */}
-      <section className="bg-navy py-16 text-center text-offwhite md:py-20">
+      <section className="bg-white py-16 text-center md:py-20">
         <div className="mx-auto max-w-2xl px-5 md:px-8">
-          <h2 className="font-heading text-2xl font-extrabold md:text-3xl">
+          <h2 className="font-heading text-2xl font-semibold text-ink md:text-3xl">
             Ready to start with {product.title}?
           </h2>
-          <p className="mt-4 font-body text-base text-offwhite/70">
+          <p className="mt-4 font-body text-base text-ink/70">
             Instant download. GH&#8373;{product.priceGHS} once, yours for good.
           </p>
           <div className="mx-auto mt-8 flex justify-center">
