@@ -20,9 +20,9 @@ const FAQS: FAQItem[] = [
       "Delivery is instant. Once payment is confirmed, Paystack redirects you to a download page and sends a copy of the link to your email, so you can also grab it later from your inbox.",
   },
   {
-    question: "What if I want a refund?",
+    question: "Can I get a refund?",
     answer:
-      "Message us on WhatsApp within 7 days of purchase and explain what didn't work for you. If you've genuinely given it a go, we'll refund you — no interrogation.",
+      "No — because the guide is a PDF delivered the moment you pay, all sales are final. So ask us anything before you buy: message us on WhatsApp and we'll tell you honestly whether the guide is right for you. If you paid and didn't receive your guide, that's different — message us and we'll deliver it straight away.",
   },
   {
     question: "Can I read it on my phone?",

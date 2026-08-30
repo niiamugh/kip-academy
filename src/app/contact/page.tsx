@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { CONTACT_EMAIL, SOCIAL_LINKS } from "@/lib/config";
-import { IconFacebook, IconInstagram, IconWhatsApp } from "@/components/icons";
+import { IconFacebook, IconWhatsApp } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -51,15 +51,6 @@ export default function ContactPage() {
               className="text-ink/60 transition-colors hover:text-red"
             >
               <IconFacebook className="h-6 w-6" />
-            </a>
-            <a
-              href={SOCIAL_LINKS.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="KIP Academy on Instagram"
-              className="text-ink/60 transition-colors hover:text-red"
-            >
-              <IconInstagram className="h-6 w-6" />
             </a>
           </div>
         </div>

@@ -3,7 +3,14 @@ import { products } from "@/data/products";
 import { SITE_URL } from "@/lib/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/store", "/about", "/contact"].map((path) => ({
+  const staticRoutes = [
+    "",
+    "/store",
+    "/about",
+    "/contact",
+    "/privacy",
+    "/refund-policy",
+  ].map((path) => ({
     url: `${SITE_URL}${path}`,
     lastModified: new Date(),
   }));

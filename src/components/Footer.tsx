@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CONTACT_EMAIL, SITE_TAGLINE, SOCIAL_LINKS } from "@/lib/config";
-import { IconFacebook, IconInstagram, IconWhatsApp } from "./icons";
+import { IconFacebook, IconWhatsApp } from "./icons";
 
 const COLUMNS = [
   {
@@ -12,8 +12,11 @@ const COLUMNS = [
     ],
   },
   {
-    title: "Flagship guide",
-    links: [{ href: "/store/unshakeable", label: "Unshakeable" }],
+    title: "Legal",
+    links: [
+      { href: "/privacy", label: "Privacy Policy" },
+      { href: "/refund-policy", label: "Refund Policy" },
+    ],
   },
 ];
 
@@ -42,15 +45,6 @@ export function Footer() {
                 className="text-white/70 transition-colors hover:text-red-bright"
               >
                 <IconFacebook className="h-5 w-5" />
-              </a>
-              <a
-                href={SOCIAL_LINKS.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="KIP Academy on Instagram"
-                className="text-white/70 transition-colors hover:text-red-bright"
-              >
-                <IconInstagram className="h-5 w-5" />
               </a>
               <a
                 href={SOCIAL_LINKS.whatsapp}

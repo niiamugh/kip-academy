@@ -24,13 +24,16 @@ export const WHATSAPP_LINK_WITH_MESSAGE = `${WHATSAPP_LINK}?text=${encodeURIComp
   WHATSAPP_PREFILL
 )}`;
 
-// TODO: Replace with the real contact email.
-export const CONTACT_EMAIL = "hello@kipacademy.com";
+export const CONTACT_EMAIL = "thekipacademy@gmail.com";
 
-// TODO: Replace with your real social page URLs.
-export const SOCIAL_LINKS = {
-  facebook: "https://facebook.com/kipacademy",
-  instagram: "https://instagram.com/kipacademy",
+// `instagram` is intentionally absent until the account exists — the
+// footer and contact page only render the links present here.
+export const SOCIAL_LINKS: {
+  facebook: string;
+  instagram?: string;
+  whatsapp: string;
+} = {
+  facebook: "https://www.facebook.com/profile.php?id=61590633331939",
   whatsapp: WHATSAPP_LINK_WITH_MESSAGE,
 };
 
@@ -44,8 +47,9 @@ export const DEFAULT_PAYMENT_LINK = "https://paystack.com/pay/PLACEHOLDER";
 export const PAYMENT_TRUST_NOTE =
   "Secure payment via Paystack — Mobile Money & cards accepted. Instant PDF delivery.";
 
-// TODO: Paste your GA4 Measurement ID (e.g. "G-XXXXXXXXXX") to enable
-// Google Analytics. Leave blank to keep analytics disabled.
+// GA4 Measurement ID (looks like "G-XXXXXXXXXX"). Set
+// NEXT_PUBLIC_GA_MEASUREMENT_ID in .env.local on the VPS, or paste the ID
+// as the fallback below. Blank = Google Analytics stays off.
 export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "";
 
 // Meta/Facebook Pixel ID (pixel IDs are public — they appear in the page
