@@ -43,7 +43,7 @@ export const products: Product[] = [
     priceGHS: 79,
     priceUSD: 6,
     coverImage: "/covers/unshakeable.jpg",
-    paymentLink: "https://paystack.com/pay/PLACEHOLDER-unshakeable",
+    paymentLink: "https://www.skillspad.org/products/unshakeable",
     featured: true,
     comingSoon: false,
     painPoints: [
