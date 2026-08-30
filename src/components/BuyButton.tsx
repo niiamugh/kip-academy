@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { fbqTrack } from "@/components/MetaPixel";
+import { WHATSAPP_LINK } from "@/lib/config";
 
 /**
  * "Buy Now" → inline email step → Paystack hosted checkout.
@@ -64,10 +65,17 @@ export function BuyButton({
       });
       const json = await res.json().catch(() => ({}));
 
-      if (res.status === 503 && fallbackLink) {
+      if (res.status === 503) {
         // Paystack not set up yet — send the buyer to the external
-        // checkout (Skillspad) instead of a dead end.
-        window.location.href = fallbackLink;
+        // checkout (e.g. Skillspad) instead of a dead end. If the
+        // fallback link is still a placeholder, hand them to WhatsApp
+        // with a ready-made order message so the sale isn't lost.
+        if (fallbackLink && !fallbackLink.includes("PLACEHOLDER")) {
+          window.location.href = fallbackLink;
+        } else {
+          const msg = `Hello KIP Academy, I'd like to buy "${productName}" (GH₵${priceGHS}). How do I pay?`;
+          window.location.href = `${WHATSAPP_LINK}?text=${encodeURIComponent(msg)}`;
+        }
         return;
       }
       if (!res.ok || !json.authorizationUrl) {

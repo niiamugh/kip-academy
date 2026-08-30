@@ -192,16 +192,18 @@ export default function ProductPage({ params }: { params: { id: string } }) {
       )}
 
       {/* Testimonials */}
-      <section className="bg-white py-16 md:py-20">
-        <div className="mx-auto max-w-6xl px-5 md:px-8">
-          <h2 className="font-heading text-2xl font-semibold text-ink md:text-3xl">
-            What readers say
-          </h2>
-          <div className="mt-10">
-            <Testimonials />
+      {product.testimonials && product.testimonials.length > 0 && (
+        <section className="bg-white py-16 md:py-20">
+          <div className="mx-auto max-w-6xl px-5 md:px-8">
+            <h2 className="font-heading text-2xl font-semibold text-ink md:text-3xl">
+              What readers say
+            </h2>
+            <div className="mt-10">
+              <Testimonials items={product.testimonials} />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* FAQ */}
       <section className="bg-haze py-16 md:py-20">

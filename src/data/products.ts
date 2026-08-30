@@ -21,6 +21,8 @@ export type Product = {
   painPoints?: string[];
   whatsInside?: string[];
   whoItsFor?: string[];
+  /** Reader quotes shown on the sales page; omit to hide the section. */
+  testimonials?: { quote: string; name: string; role: string }[];
 };
 
 /**
@@ -61,6 +63,58 @@ export const products: Product[] = [
       "Early-career professionals who freeze up in meetings and interviews",
       "Anyone who over-prepares for conversations and still feels unready",
       "People who've tried generic confidence advice and want something more specific",
+    ],
+    // TODO: replace with real reader testimonials once you have them.
+    testimonials: [
+      {
+        quote:
+          "I read this in a weekend and used the interview script the same week. Got the job.",
+        name: "Efua A.",
+        role: "Reader, Accra",
+      },
+      {
+        quote:
+          "Short, direct, no filler. The daily practice is the first 'confidence habit' I've actually kept up.",
+        name: "Kwame O.",
+        role: "Reader, Kumasi",
+      },
+      {
+        quote:
+          "Recommended it to my whole team. It's the rare self-help guide that tells you exactly what to do, not just what to feel.",
+        name: "Naa T.",
+        role: "Reader, Tema",
+      },
+    ],
+  },
+  {
+    id: "study-abroad",
+    title: "Study Abroad. Work Abroad.",
+    subtitle: "A practical guide for Africans to succeed globally.",
+    description:
+      "The step-by-step playbook for studying and working abroad — choosing the right country and course, winning admissions and visas, and building a life and career once you land.",
+    priceGHS: 90,
+    priceUSD: 7,
+    coverImage: "/covers/study-abroad.jpg",
+    paymentLink: DEFAULT_PAYMENT_LINK,
+    featured: false,
+    comingSoon: false,
+    painPoints: [
+      "You want to study or work abroad, but every blog and agent tells you something different — and some just want your money.",
+      "You don't know which country, school, or program actually fits your budget and your goals.",
+      "Applications, scholarships, and visa requirements feel like a maze designed for you to fail.",
+      "You worry about what happens after you land: fitting in, finding work, and actually building something lasting.",
+    ],
+    whatsInside: [
+      "Choose smart: how to pick a country, course, and school with purpose — not hype",
+      "Prepare well: applications, scholarships, and visa steps that make you stand out and get selected",
+      "Adapt fast: settling in, handling culture shock, and thriving in a new environment",
+      "Build a future: finding work, growing your career, and creating lasting impact abroad",
+      "Checklists and timelines for every stage, from first decision to first job",
+    ],
+    whoItsFor: [
+      "Students and graduates across Africa planning to study abroad",
+      "Professionals who want to work internationally without wasting years on wrong moves",
+      "Parents and sponsors who want a clear picture of the whole journey",
     ],
   },
   {
